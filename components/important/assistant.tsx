@@ -53,6 +53,12 @@ import {
   ToolInput,
   ToolOutput,
 } from '@/components/ai-elements/tool';
+import {
+  Reasoning,
+  ReasoningContent,
+  ReasoningTrigger,
+} from '@/components/ai-elements/reasoning';
+import { Shimmer } from '@/components/ai-elements/shimmer';
 
 type MyMetadata = {
   totalUsage: LanguageModelUsage;
@@ -257,9 +263,25 @@ export default function AssistantDialog() {
           EmptyChatState
         ) : (
           <div className="space-y-4">
-            {messages.map((message) => {
+            {messages.map((message, messageIndex) => {
               const timestamp: Date = message.createdAt || new Date();
               const isUser: boolean = message.role === 'user';
+              const isLastMessage = messageIndex === messages.length - 1;
+
+              // Consolidate all reasoning parts into a single Reasoning block
+              // (gpt-oss-* models can emit multiple reasoning parts per turn).
+              const reasoningParts = message.parts.filter(
+                (part) => part.type === 'reasoning',
+              ) as Array<{ type: 'reasoning'; text: string }>;
+              const reasoningText = reasoningParts
+                .map((p) => p.text)
+                .join('\n\n');
+              const hasReasoning = reasoningParts.length > 0;
+              const lastPart = message.parts.at(-1);
+              const isReasoningStreaming =
+                isLastMessage &&
+                status === 'streaming' &&
+                lastPart?.type === 'reasoning';
 
               return (
                 <div
@@ -288,6 +310,15 @@ export default function AssistantDialog() {
                           : 'dark:prose-dark prose bg-fd-muted prose-code:bg-fd-card prose-code:px-1 prose-code:font-mono prose-code:text-fd-accent-foreground',
                       )}
                     >
+                      {hasReasoning && (
+                        <Reasoning
+                          className="w-full"
+                          isStreaming={isReasoningStreaming}
+                        >
+                          <ReasoningTrigger />
+                          <ReasoningContent>{reasoningText}</ReasoningContent>
+                        </Reasoning>
+                      )}
                       {message.parts.map((part, partIndex) => {
                         const key = `${message.id}-${partIndex}`;
                         if (part.type === 'text') {
@@ -356,6 +387,31 @@ export default function AssistantDialog() {
                 </div>
               );
             })}
+            {(() => {
+              // Show the "Thinking..." shimmer bubble after the last user message
+              // when the API is processing but hasn't started streaming any
+              // assistant content yet (or only has tool calls so far without text).
+              if (!isLoading) return null;
+              const lastMessage = messages.at(-1);
+              const assistantTalking =
+                lastMessage?.role === 'assistant' &&
+                lastMessage.parts.some(
+                  (p) => p.type === 'text' && p.text.length > 0,
+                );
+              if (assistantTalking) return null;
+              const label =
+                status === 'submitted' ? 'Thinking' : 'Generating';
+              return (
+                <div className="flex items-start justify-start gap-3">
+                  <div className="bg-fd-accent hidden h-min rounded-full p-2 sm:block">
+                    <SparklesIcon className="size-4" />
+                  </div>
+                  <div className="bg-fd-muted flex max-w-full items-center rounded-lg px-4 py-2 text-sm sm:max-w-[calc(100%-3.75rem)]">
+                    <Shimmer duration={1.8}>{`${label}...`}</Shimmer>
+                  </div>
+                </div>
+              );
+            })()}
             {error && (
               <div className="flex items-start justify-start gap-3">
                 <div className="hidden h-min rounded-full bg-red-500 p-2 sm:block">
@@ -386,7 +442,7 @@ export default function AssistantDialog() {
         )}
       </ScrollArea>
     ),
-    [messages, formatTime, EmptyChatState, error, regenerate],
+    [messages, formatTime, EmptyChatState, error, regenerate, isLoading, status],
   );
 
   const chatFooter = useMemo(

@@ -23,7 +23,9 @@ export async function POST(req: Request) {
         chunking: 'word',
       }),
     });
-    return result.toUIMessageStreamResponse();
+    return result.toUIMessageStreamResponse({
+      sendReasoning: true,
+    });
   } catch (error) {
     console.error('Unhandled error in chat API:', error);
     throw error;
