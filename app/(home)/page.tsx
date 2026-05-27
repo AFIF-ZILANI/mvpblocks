@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import Hero from '@/components/home/hero';
 import Features from '@/components/home/features';
 import Gallery from '@/components/home/gallery';
-import Hero from '@/components/home/hero';
 import Testimonials from '@/components/home/testimonials';
 import { createMetadata } from '@/lib/metadata';
 import {
@@ -14,7 +14,7 @@ import { siteConfig } from '@/config/site';
 export const dynamic = 'force-static';
 
 const TITLE =
-  'MVPBlocks — Open-Source UI Blocks for Next.js, React & Tailwind CSS';
+  'MVPBlocks | Open-Source UI Blocks for Next.js, React & Tailwind CSS';
 const DESCRIPTION =
   'MVPBlocks is a free, open-source library of beautifully crafted, copy-paste UI blocks, sections, and templates built with Next.js, React, Tailwind CSS, and Framer Motion. Ship your MVP, landing page, or SaaS product in hours instead of weeks.';
 

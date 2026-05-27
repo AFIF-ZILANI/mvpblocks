@@ -10,7 +10,9 @@ import {
 import { siteConfig } from '@/config/site';
 import { products } from '@/constants/templates';
 
-const TITLE = 'Premium Templates — Production-Ready Next.js & React Templates';
+export const dynamic = 'force-static';
+
+const TITLE = 'Premium Templates | Production-Ready Next.js & React Templates';
 const DESCRIPTION =
   'Browse premium, production-ready Next.js and React templates for AI SaaS, marketing sites, developer portfolios, designer portfolios, AI chatbots, and DevOps dashboards. Buy once, ship faster.';
 

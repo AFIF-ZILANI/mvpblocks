@@ -6,7 +6,7 @@ import { siteConfig } from '@/config/site';
 
 export const dynamic = 'force-static';
 
-const TITLE = 'About MVPBlocks — Our Mission & Story';
+const TITLE = 'About MVPBlocks | Our Mission & Story';
 const DESCRIPTION =
   'Learn about MVPBlocks: an open-source UI library for developers building MVPs, landing pages, and SaaS products. Discover our mission, story, and the people behind the project.';
 

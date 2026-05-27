@@ -1,18 +1,23 @@
 'use client';
 
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { ShowcaseCard } from './showcase-card';
 import { showcaseData } from '@/lib/showcase';
 import { AddCard } from './add-card';
 
-export function ShowcaseGrid() {
+const GRID_INITIAL = { opacity: 0, y: 20 } as const;
+const GRID_ANIMATE = { opacity: 1, y: 0 } as const;
+const GRID_TRANSITION = { duration: 0.5 } as const;
+
+function ShowcaseGridImpl() {
   return (
     <div className="space-y-8">
       {/* Showcase grid */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        initial={GRID_INITIAL}
+        animate={GRID_ANIMATE}
+        transition={GRID_TRANSITION}
         className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
       >
         {showcaseData.map((item, index) => (
@@ -23,3 +28,5 @@ export function ShowcaseGrid() {
     </div>
   );
 }
+
+export const ShowcaseGrid = memo(ShowcaseGridImpl);

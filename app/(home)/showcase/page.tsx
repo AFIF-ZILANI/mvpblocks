@@ -10,7 +10,9 @@ import {
 import { siteConfig } from '@/config/site';
 import { showcaseData } from '@/lib/showcase';
 
-const TITLE = 'Showcase — Real Products Built with MVPBlocks';
+export const dynamic = 'force-static';
+
+const TITLE = 'Showcase | Real Products Built with MVPBlocks';
 const DESCRIPTION =
   'Discover real-world products, SaaS apps, developer tools, and side projects built with MVPBlocks. See how teams and indie hackers ship faster using our open-source UI blocks.';
 

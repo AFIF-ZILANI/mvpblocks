@@ -1,13 +1,18 @@
+import { memo } from 'react';
 import Link from 'next/link';
 import { PlusCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export function AddCard() {
+const ADD_INITIAL = { opacity: 0 } as const;
+const ADD_ANIMATE = { opacity: 1 } as const;
+const ADD_TRANSITION = { duration: 0.5, delay: 0.2 } as const;
+
+function AddCardImpl() {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+      initial={ADD_INITIAL}
+      animate={ADD_ANIMATE}
+      transition={ADD_TRANSITION}
       className="relative flex h-full flex-col items-center justify-center rounded-lg border-2 border-dashed border-zinc-300 text-center dark:border-zinc-800"
     >
       <Link
@@ -23,3 +28,5 @@ export function AddCard() {
     </motion.div>
   );
 }
+
+export const AddCard = memo(AddCardImpl);

@@ -13,7 +13,7 @@ const items = [
     id: '1',
     title: 'What makes MVPBlocks different?',
     content:
-      'MVPBlocks is a fully open-source, developer-first component library built using Next.js and TailwindCSS, designed to help you launch your MVPs in record time. No bloated packages, no unnecessary installs—just clean, copyable code to plug right into your next big thing.',
+      'MVPBlocks is a fully open-source, developer-first component library built using Next.js and TailwindCSS, designed to help you launch your MVPs in record time. No bloated packages, no unnecessary installs, just clean, copyable code to plug right into your next big thing.',
   },
   {
     id: '2',
@@ -31,7 +31,7 @@ const items = [
     id: '4',
     title: 'Can I use MVPBlocks for commercial projects?',
     content:
-      'Yes, all MVPBlocks components are free to use for both personal and commercial projects. No attribution required—just build and launch your MVP faster than ever before.',
+      'Yes, all MVPBlocks components are free to use for both personal and commercial projects. No attribution required, just build and launch your MVP faster than ever before.',
   },
   {
     id: '5',

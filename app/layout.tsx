@@ -14,15 +14,15 @@ import {
   websiteSchema,
 } from '@/lib/jsonld';
 
-const TITLE = `${siteConfig.name} — Open-Source UI Blocks for Next.js & Tailwind CSS`;
+const TITLE = `${siteConfig.name} | Open-Source UI Blocks for Next.js & Tailwind CSS`;
 const DESCRIPTION =
-  'Copy, paste, customize, and ship faster. MVPBlocks is an open-source, developer-first library of beautifully-crafted UI blocks, sections, and templates built with Next.js, React, Tailwind CSS, and Framer Motion — perfect for MVPs, landing pages, and SaaS products.';
+  'Copy, paste, customize, and ship faster. MVPBlocks is an open-source, developer-first library of beautifully-crafted UI blocks, sections, and templates built with Next.js, React, Tailwind CSS, and Framer Motion, perfect for MVPs, landing pages, and SaaS products.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: TITLE,
-    template: `%s — ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: DESCRIPTION,
   applicationName: siteConfig.name,
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} — Open-source UI blocks for Next.js and Tailwind CSS`,
+        alt: `${siteConfig.name}: Open-source UI blocks for Next.js and Tailwind CSS`,
       },
     ],
     locale: 'en_US',

@@ -11,7 +11,7 @@ import { JsonLd, breadcrumbSchema } from '@/lib/jsonld';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = createMetadata({
-  title: 'License — BSD 3-Clause',
+  title: 'License | BSD 3-Clause',
   description:
     'MVPBlocks is released under the BSD 3-Clause License. Free to use in personal and commercial projects, including SaaS apps, MVPs, and client work.',
   pathname: '/license',

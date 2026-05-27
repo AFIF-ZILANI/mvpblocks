@@ -3,18 +3,25 @@
 import { geist } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import { Spotlight } from '../ui/spotlight';
-import { useTheme } from 'next-themes';
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import CardCaroursalDemo from './cardcarouseldemo';
 import WrapButtonDemo from '../ui/wrap-button';
 import { Globe } from 'lucide-react';
 import Image from 'next/image';
 
+const MOTION_HIDDEN = { opacity: 0, y: 50 } as const;
+const MOTION_VISIBLE = { opacity: 1, y: 0 } as const;
+const HEADER_TRANSITION = { duration: 0.5, delay: 0 } as const;
+const INVIEW_OPTS = { once: true, amount: 0.3 } as const;
+
 export default function Gallery() {
-  const { theme } = useTheme();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, INVIEW_OPTS);
+  const headerAnimate = useMemo(
+    () => (isInView ? MOTION_VISIBLE : MOTION_HIDDEN),
+    [isInView],
+  );
 
   return (
     <section
@@ -54,9 +61,9 @@ export default function Gallery() {
       <div className="mx-auto px-2">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.5, delay: 0 }}
+          initial={MOTION_HIDDEN}
+          animate={headerAnimate}
+          transition={HEADER_TRANSITION}
           className="mx-auto max-w-[540px]"
         >
           <div className="flex justify-center">

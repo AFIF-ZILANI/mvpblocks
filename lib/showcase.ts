@@ -23,7 +23,7 @@ export const showcaseData: ShowcaseItem[] = [
   {
     name: 'Skul',
     about:
-      'Our platform streamlines administration, communication, and learning, helping schools run efficiently and stay connected. Manage students, teachers, and operations—all from one powerful dashboard.',
+      'Our platform streamlines administration, communication, and learning, helping schools run efficiently and stay connected. Manage students, teachers, and operations, all from one powerful dashboard.',
     image: '/showcase-images/skul.webp',
     link: 'https://skul-gamma.vercel.app/',
   },

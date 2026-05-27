@@ -21,7 +21,7 @@ const features = [
   {
     icon: <Paintbrush className="h-6 w-6" />,
     title: 'Easily Customizable',
-    desc: 'Every block is built to be editable. From layout to logic, style to structure—make it your own.',
+    desc: 'Every block is built to be editable. From layout to logic, style to structure, make it your own.',
   },
   {
     icon: <Rocket className="h-6 w-6" />,

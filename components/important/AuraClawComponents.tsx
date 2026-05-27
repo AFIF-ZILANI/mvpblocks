@@ -91,7 +91,7 @@ function AuraClawBuyDialog({
 
   const price = PRICES[selectedPlan].inr;
   const meta = PLAN_META[selectedPlan];
-  const title = `AuraClaw — ${meta.label}`;
+  const title = `AuraClaw: ${meta.label}`;
   const productId = `AuraClaw ${meta.label}`;
 
   const handleCheckout = async () => {

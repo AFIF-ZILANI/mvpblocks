@@ -19,7 +19,7 @@ const faqs = [
   {
     question: 'Can I use these blocks commercially?',
     answer:
-      'Absolutely. All components are free to use for personal and commercial projects. No attribution needed—just build and launch.',
+      'Absolutely. All components are free to use for personal and commercial projects. No attribution needed, just build and launch.',
   },
   {
     question: 'Are the blocks responsive and accessible?',

@@ -45,7 +45,7 @@ export default function Advertisement() {
             <div className="space-y-2 text-center max-w-sm mx-auto">
               <p className="text-sm text-neutral-400">
                 ✨ Lovable, premium-quality templates available at the most
-                cheapest prices — built to look elite.
+                cheapest prices, built to look elite.
               </p>
             </div>
           </div>

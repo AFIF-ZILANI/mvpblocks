@@ -1,10 +1,11 @@
 'use client';
 
-import { Github, Heart, Instagram, Linkedin } from 'lucide-react';
+import { Github, Instagram, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { memo } from 'react';
 
-export default function Footer() {
+function FooterBase() {
   return (
     <footer className="bg-muted/30 relative overflow-hidden rounded-t-3xl border-t md:rounded-t-[4rem]">
       <div className="absolute inset-0 -z-10">
@@ -27,7 +28,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-muted-foreground mb-4">
-              Copy-paste UI components that just work — responsive, animated,
+              Copy-paste UI components that just work: responsive, animated,
               and beautifully styled.
             </p>
             <div className="flex space-x-3">
@@ -245,3 +246,6 @@ export default function Footer() {
     </footer>
   );
 }
+
+const Footer = memo(FooterBase);
+export default Footer;

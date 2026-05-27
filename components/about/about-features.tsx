@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from 'react';
 import { cn } from '@/lib/utils';
 import {
   Book,
@@ -12,73 +13,78 @@ import {
   Terminal,
 } from 'lucide-react';
 
-export default function AboutFeaturesSection() {
-  const features = [
-    {
-      title: 'Developer-Friendly',
-      description: 'Tailored for developers to create and iterate fast.',
-      icon: <Code />,
-    },
-    {
-      title: 'CLI Support',
-      description: 'Command-line interface support for seamless development.',
-      icon: <Terminal />,
-    },
-    {
-      title: 'Easily Customisable',
-      description: 'Fully adaptable to fit your unique needs.',
-      icon: <Sliders />,
-    },
-    {
-      title: 'v0 Support',
-      description:
-        'Initial version support to kickstart your MVP without hassle.',
-      icon: <GitCommit />,
-    },
-    {
-      title: 'Fully Functional Docs Understanding',
-      description:
-        'Comprehensive documentation to understand every feature and usage.',
-      icon: <Book />,
-    },
-    {
-      title: 'Multi Viewport',
-      description: 'Preview your MVP across multiple devices and screen sizes.',
-      icon: <Monitor />,
-    },
-    {
-      title: 'Easy-to-Use Interface',
-      description: 'Simple, intuitive UI for seamless MVP creation.',
-      icon: <Layout />,
-    },
-    {
-      title: 'Add Yours!',
-      description:
-        'Add your own features and customize your MVPBlocks experience.',
-      icon: <PlusCircle />,
-    },
-  ];
+// Hoisted feature data (stable across renders)
+const FEATURES = [
+  {
+    title: 'Developer-Friendly',
+    description: 'Tailored for developers to create and iterate fast.',
+    icon: <Code />,
+  },
+  {
+    title: 'CLI Support',
+    description: 'Command-line interface support for seamless development.',
+    icon: <Terminal />,
+  },
+  {
+    title: 'Easily Customisable',
+    description: 'Fully adaptable to fit your unique needs.',
+    icon: <Sliders />,
+  },
+  {
+    title: 'v0 Support',
+    description:
+      'Initial version support to kickstart your MVP without hassle.',
+    icon: <GitCommit />,
+  },
+  {
+    title: 'Fully Functional Docs Understanding',
+    description:
+      'Comprehensive documentation to understand every feature and usage.',
+    icon: <Book />,
+  },
+  {
+    title: 'Multi Viewport',
+    description: 'Preview your MVP across multiple devices and screen sizes.',
+    icon: <Monitor />,
+  },
+  {
+    title: 'Easy-to-Use Interface',
+    description: 'Simple, intuitive UI for seamless MVP creation.',
+    icon: <Layout />,
+  },
+  {
+    title: 'Add Yours!',
+    description:
+      'Add your own features and customize your MVPBlocks experience.',
+    icon: <PlusCircle />,
+  },
+] as const;
 
+function AboutFeaturesSection() {
   return (
     <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-4">
-      {features.map((feature, index) => (
+      {FEATURES.map((feature, index) => (
         <Feature key={feature.title} {...feature} index={index} />
       ))}
     </div>
   );
 }
 
-const Feature = ({
-  title,
-  description,
-  icon,
-  index,
-}: {
+export default memo(AboutFeaturesSection);
+
+interface FeatureProps {
   title: string;
   description: string;
   icon: React.ReactNode;
   index: number;
-}) => {
+}
+
+const Feature = memo(function Feature({
+  title,
+  description,
+  icon,
+  index,
+}: FeatureProps) {
   return (
     <div
       className={cn(
@@ -107,4 +113,4 @@ const Feature = ({
       </p>
     </div>
   );
-};
+});

@@ -2,16 +2,16 @@
 
 import { Check, Copy } from 'lucide-react';
 import { Button } from './button';
-import { useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 
-export const CopyButton = ({ text }: { text: string }) => {
+function CopyButtonImpl({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
+  const handleCopy = useCallback(() => {
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
+  }, [text]);
 
   return (
     <Button
@@ -31,4 +31,6 @@ export const CopyButton = ({ text }: { text: string }) => {
       )}
     </Button>
   );
-};
+}
+
+export const CopyButton = memo(CopyButtonImpl);

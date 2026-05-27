@@ -1,11 +1,12 @@
 import { ImageResponse } from 'next/og';
+import sharp from 'sharp';
 import { metadataImage } from '@/lib/metadata';
 
-export const GET = metadataImage.createAPI((page) => {
+export const GET = metadataImage.createAPI(async (page) => {
   if (!page.data.title || !page.data.description) {
     return new Response('Missing title or description', { status: 400 });
   }
-  return new ImageResponse((
+  const imageResponse = new ImageResponse((
     <div
       style={{
         height: '100%',
@@ -389,18 +390,28 @@ export const GET = metadataImage.createAPI((page) => {
       height: 630,
     },
   );
+
+  const pngBuffer = Buffer.from(await imageResponse.arrayBuffer());
+  const webpBuffer = await sharp(pngBuffer)
+    .webp({ quality: 80, effort: 6 })
+    .toBuffer();
+
+  return new Response(new Uint8Array(webpBuffer), {
+    status: 200,
+    headers: {
+      'Content-Type': 'image/webp',
+      'Cache-Control':
+        'public, max-age=86400, s-maxage=31536000, stale-while-revalidate=604800',
+      'Vercel-CDN-Cache-Control': 'public, max-age=31536000, immutable',
+    },
+  });
 });
 
 export const dynamic = 'force-static';
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = 31536000;
 
 export async function generateStaticParams() {
   const params = metadataImage.generateParams();
-  if (!Array.isArray(params)) {
-    return [];
-  }
-  return params.filter((param: { slug: string[] }) => {
-    const lastSegment = param.slug[param.slug.length - 1];
-    return !lastSegment.match(/\.(png|jpg|jpeg|gif|webp|svg|ico|webm|mp4|mov|avi|mkv)$/i);
-  });
+  return Array.isArray(params) ? params : [];
 }

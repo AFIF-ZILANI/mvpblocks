@@ -1,5 +1,5 @@
 // Auto-generated file - Do not edit manually
-// Last updated: 2026-01-08T07:43:50.002Z
+// Last updated: 2026-05-27T15:10:43.492Z
 
 export const githubData = {
   "contributors": [
@@ -23,33 +23,9 @@ export const githubData = {
       "type": "User",
       "user_view_type": "public",
       "site_admin": false,
-      "contributions": 706,
+      "contributions": 739,
       "name": "Subhadeep Roy",
-      "bio": "Full Stack Web dev | 700+ Leetcode solver | Creative thinking 👽 | Loves chess♟️| CSE'26 🔥 | Aspiring SDE"
-    },
-    {
-      "login": "nuelst",
-      "id": 79723710,
-      "node_id": "MDQ6VXNlcjc5NzIzNzEw",
-      "avatar_url": "https://avatars.githubusercontent.com/u/79723710?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/nuelst",
-      "html_url": "https://github.com/nuelst",
-      "followers_url": "https://api.github.com/users/nuelst/followers",
-      "following_url": "https://api.github.com/users/nuelst/following{/other_user}",
-      "gists_url": "https://api.github.com/users/nuelst/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/nuelst/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/nuelst/subscriptions",
-      "organizations_url": "https://api.github.com/users/nuelst/orgs",
-      "repos_url": "https://api.github.com/users/nuelst/repos",
-      "events_url": "https://api.github.com/users/nuelst/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/nuelst/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false,
-      "contributions": 21,
-      "name": "manuel",
-      "bio": ""
+      "bio": "Fullstack Next Js Dev | AI | Web3 | Running a Web dev Agency | Writes blogs \r\nCreating innovative stuff 🚀✨"
     },
     {
       "login": "mosespace",
@@ -72,7 +48,7 @@ export const githubData = {
       "user_view_type": "public",
       "site_admin": false,
       "contributions": 14,
-      "name": "Uncle Moses",
+      "name": "Moses Kisakye",
       "bio": "Shipping Code World Wide from London-(UK) 24/7 ✈️🌐🌍"
     },
     {
@@ -97,7 +73,7 @@ export const githubData = {
       "site_admin": false,
       "contributions": 13,
       "name": "Anish Biswas",
-      "bio": "♦️Learning.  Growing. Blooming✨ | Passionate developer with a love for problem-solving , efficient and creative thinking 🔥💫"
+      "bio": "Founder @AuraDevs7 ♦️Learning.  Growing. Blooming✨ | Passionate developer with a love for problem-solving , efficient and creative thinking 🔥💫 "
     },
     {
       "login": "midhunkalarikkal",
@@ -122,6 +98,30 @@ export const githubData = {
       "contributions": 12,
       "name": "Midhun K Paniker",
       "bio": "\"🚀 Full-Stack Developer | 💻 Passionate about coding and building real-world projects | 📚 Always learning, growing, and sharing knowledge.\""
+    },
+    {
+      "login": "nuelst",
+      "id": 79723710,
+      "node_id": "MDQ6VXNlcjc5NzIzNzEw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/79723710?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nuelst",
+      "html_url": "https://github.com/nuelst",
+      "followers_url": "https://api.github.com/users/nuelst/followers",
+      "following_url": "https://api.github.com/users/nuelst/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nuelst/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nuelst/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nuelst/subscriptions",
+      "organizations_url": "https://api.github.com/users/nuelst/orgs",
+      "repos_url": "https://api.github.com/users/nuelst/repos",
+      "events_url": "https://api.github.com/users/nuelst/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nuelst/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false,
+      "contributions": 11,
+      "name": "manuel",
+      "bio": ""
     },
     {
       "login": "Siddhi-121",
@@ -169,7 +169,7 @@ export const githubData = {
       "site_admin": false,
       "contributions": 9,
       "name": "The Vinayak Gore",
-      "bio": "Frontend Developer | Next.js React Sanity CMS | Building Dynamic Web Applications \r\n💼 Fiverr - https://www.fiverr.com/s/38gE4YY"
+      "bio": "Frontend Engineer ✦ Creator of Venumity UI ✦ Love building components, animations & websites ✦ Next.js, Framer Motion, Sanity CMS, Typescript."
     },
     {
       "login": "Ecolash",
@@ -360,8 +360,56 @@ export const githubData = {
       "user_view_type": "public",
       "site_admin": false,
       "contributions": 4,
-      "name": "AbSrDUO1",
+      "name": "Rengoku",
       "bio": ""
+    },
+    {
+      "login": "aagmanpal",
+      "id": 126964489,
+      "node_id": "U_kgDOB5FTCQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/126964489?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aagmanpal",
+      "html_url": "https://github.com/aagmanpal",
+      "followers_url": "https://api.github.com/users/aagmanpal/followers",
+      "following_url": "https://api.github.com/users/aagmanpal/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aagmanpal/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aagmanpal/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aagmanpal/subscriptions",
+      "organizations_url": "https://api.github.com/users/aagmanpal/orgs",
+      "repos_url": "https://api.github.com/users/aagmanpal/repos",
+      "events_url": "https://api.github.com/users/aagmanpal/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aagmanpal/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false,
+      "contributions": 4,
+      "name": "Aagman Pal",
+      "bio": ""
+    },
+    {
+      "login": "FurkanFarooqui19",
+      "id": 164612722,
+      "node_id": "U_kgDOCc_Kcg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/164612722?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/FurkanFarooqui19",
+      "html_url": "https://github.com/FurkanFarooqui19",
+      "followers_url": "https://api.github.com/users/FurkanFarooqui19/followers",
+      "following_url": "https://api.github.com/users/FurkanFarooqui19/following{/other_user}",
+      "gists_url": "https://api.github.com/users/FurkanFarooqui19/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/FurkanFarooqui19/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/FurkanFarooqui19/subscriptions",
+      "organizations_url": "https://api.github.com/users/FurkanFarooqui19/orgs",
+      "repos_url": "https://api.github.com/users/FurkanFarooqui19/repos",
+      "events_url": "https://api.github.com/users/FurkanFarooqui19/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/FurkanFarooqui19/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false,
+      "contributions": 3,
+      "name": "Furkan Ahmad Farooqui",
+      "bio": "Computer Science Engineering student passionate about web development and exploring data structures & algorithms."
     },
     {
       "login": "bforbilly24",
@@ -456,7 +504,7 @@ export const githubData = {
       "user_view_type": "public",
       "site_admin": false,
       "contributions": 2,
-      "name": "Twilight Goblin",
+      "name": "Ayush M",
       "bio": ""
     },
     {
@@ -482,6 +530,78 @@ export const githubData = {
       "contributions": 2,
       "name": "Copilot",
       "bio": ""
+    },
+    {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false,
+      "contributions": 2,
+      "name": "dependabot[bot]",
+      "bio": ""
+    },
+    {
+      "login": "magic-peach",
+      "id": 146705736,
+      "node_id": "U_kgDOCL6NSA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/146705736?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/magic-peach",
+      "html_url": "https://github.com/magic-peach",
+      "followers_url": "https://api.github.com/users/magic-peach/followers",
+      "following_url": "https://api.github.com/users/magic-peach/following{/other_user}",
+      "gists_url": "https://api.github.com/users/magic-peach/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/magic-peach/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/magic-peach/subscriptions",
+      "organizations_url": "https://api.github.com/users/magic-peach/orgs",
+      "repos_url": "https://api.github.com/users/magic-peach/repos",
+      "events_url": "https://api.github.com/users/magic-peach/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/magic-peach/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false,
+      "contributions": 1,
+      "name": "Akanksha Trehun",
+      "bio": ""
+    },
+    {
+      "login": "Derbakias",
+      "id": 52934417,
+      "node_id": "MDQ6VXNlcjUyOTM0NDE3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52934417?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Derbakias",
+      "html_url": "https://github.com/Derbakias",
+      "followers_url": "https://api.github.com/users/Derbakias/followers",
+      "following_url": "https://api.github.com/users/Derbakias/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Derbakias/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Derbakias/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Derbakias/subscriptions",
+      "organizations_url": "https://api.github.com/users/Derbakias/orgs",
+      "repos_url": "https://api.github.com/users/Derbakias/repos",
+      "events_url": "https://api.github.com/users/Derbakias/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Derbakias/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false,
+      "contributions": 1,
+      "name": "DD",
+      "bio": "Software engineer who likes building systems.\r\nCurrently working on Sortino Labs."
     },
     {
       "login": "HarishM-git",
@@ -556,17 +676,36 @@ export const githubData = {
       "bio": "DevOps & Platform Engineer | Frontend Enthusiast | Open Source Contributor 🚀"
     }
   ],
-  "totalContributions": 838,
+  "totalContributions": 872,
   "userStats": {
-    "2026-01-08": 3,
-    "2026-01-07": 11,
-    "2025-12-25": 4,
-    "2025-12-12": 3,
-    "2025-12-11": 4,
+    "2026-05-01": 4,
+    "2026-04-30": 3,
+    "2026-03-16": 1,
+    "2026-03-13": 1,
+    "2026-03-12": 1,
+    "2026-03-05": 4,
+    "2026-02-17": 1,
+    "2026-02-13": 1,
+    "2026-02-10": 1,
+    "2026-02-09": 1,
+    "2026-02-02": 2,
+    "2026-01-31": 2,
+    "2026-01-30": 2,
+    "2026-01-28": 1,
+    "2026-01-27": 11,
+    "2026-01-26": 3,
+    "2026-01-25": 3,
+    "2026-01-24": 5,
+    "2026-01-23": 1,
+    "2026-01-19": 1,
+    "2026-01-11": 1,
+    "2026-01-08": 13,
+    "2025-12-25": 1,
+    "2025-12-12": 2,
     "2025-12-01": 2,
     "2025-11-24": 5,
     "2025-11-20": 1,
-    "2025-11-10": 6,
+    "2025-11-10": 1,
     "2025-11-06": 1,
     "2025-11-04": 3,
     "2025-11-03": 5,
@@ -687,25 +826,101 @@ export const githubData = {
     "2025-03-10": 1
   },
   "codeFrequency": {
-    "2026-01-08": {
-      "additions": 234,
-      "deletions": 242
+    "2026-05-01": {
+      "additions": 155,
+      "deletions": 165
     },
-    "2026-01-07": {
-      "additions": 9639,
-      "deletions": 38561
+    "2026-04-30": {
+      "additions": 1805,
+      "deletions": 248
+    },
+    "2026-03-16": {
+      "additions": 1,
+      "deletions": 1
+    },
+    "2026-03-13": {
+      "additions": 6,
+      "deletions": 6
+    },
+    "2026-03-12": {
+      "additions": 6,
+      "deletions": 6
+    },
+    "2026-03-05": {
+      "additions": 22,
+      "deletions": 22
+    },
+    "2026-02-17": {
+      "additions": 51,
+      "deletions": 0
+    },
+    "2026-02-13": {
+      "additions": 90,
+      "deletions": 29
+    },
+    "2026-02-10": {
+      "additions": 51,
+      "deletions": 0
+    },
+    "2026-02-09": {
+      "additions": 90,
+      "deletions": 29
+    },
+    "2026-02-02": {
+      "additions": 25,
+      "deletions": 1
+    },
+    "2026-01-31": {
+      "additions": 9,
+      "deletions": 9
+    },
+    "2026-01-30": {
+      "additions": 25,
+      "deletions": 1
+    },
+    "2026-01-28": {
+      "additions": 1,
+      "deletions": 1
+    },
+    "2026-01-27": {
+      "additions": 253,
+      "deletions": 16636
+    },
+    "2026-01-26": {
+      "additions": 61,
+      "deletions": 16645
+    },
+    "2026-01-25": {
+      "additions": 914,
+      "deletions": 1241
+    },
+    "2026-01-24": {
+      "additions": 14604,
+      "deletions": 1802
+    },
+    "2026-01-23": {
+      "additions": 5565,
+      "deletions": 0
+    },
+    "2026-01-19": {
+      "additions": 16,
+      "deletions": 24
+    },
+    "2026-01-11": {
+      "additions": 7,
+      "deletions": 165
+    },
+    "2026-01-08": {
+      "additions": 6957,
+      "deletions": 2471
     },
     "2025-12-25": {
-      "additions": 3936,
-      "deletions": 175
+      "additions": 0,
+      "deletions": 126
     },
     "2025-12-12": {
-      "additions": 1553,
-      "deletions": 375
-    },
-    "2025-12-11": {
-      "additions": 1684,
-      "deletions": 777
+      "additions": 796,
+      "deletions": 190
     },
     "2025-12-01": {
       "additions": 859,
@@ -720,8 +935,8 @@ export const githubData = {
       "deletions": 7
     },
     "2025-11-10": {
-      "additions": 3045,
-      "deletions": 45
+      "additions": 261,
+      "deletions": 6
     },
     "2025-11-06": {
       "additions": 399,
@@ -1196,7 +1411,7 @@ export const githubData = {
       "deletions": 0
     }
   },
-  "lastUpdated": "2026-01-08T07:43:50.002Z"
+  "lastUpdated": "2026-05-27T15:10:43.492Z"
 } as const;
 
 export type GitHubData = typeof githubData;

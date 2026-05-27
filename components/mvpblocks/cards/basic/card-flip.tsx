@@ -24,7 +24,7 @@ export interface CardFlipProps {
 export default function CardFlip({
   title = 'Build MVPs Fast',
   subtitle = 'Launch your idea in record time',
-  description = 'Copy, paste, customize—and launch your MVP faster than ever with our developer-first component library.',
+  description = 'Copy, paste, customize, and launch your MVP faster than ever with our developer-first component library.',
   features = [
     'Copy & Paste Ready',
     'Developer-First',

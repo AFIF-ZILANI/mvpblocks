@@ -1,15 +1,21 @@
-import * as React from 'react';
+'use client';
+
+import { memo, useCallback, useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 
-export function ModeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
+export const ModeToggle = memo(function ModeToggle() {
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMounted(true);
   }, []);
+
+  const toggle = useCallback(() => {
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+  }, [resolvedTheme, setTheme]);
 
   if (!mounted) {
     return (
@@ -29,9 +35,9 @@ export function ModeToggle() {
       variant="outline"
       size="icon"
       className="text-foreground z-50 rounded-full hover:text-primary"
-      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+      onClick={toggle}
     >
       {resolvedTheme === 'dark' ? <Sun /> : <Moon />}
     </Button>
   );
-}
+});

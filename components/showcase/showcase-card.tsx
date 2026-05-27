@@ -1,8 +1,8 @@
 'use client';
 
+import { memo, useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { useState } from 'react';
 import { ShowcaseItem } from '@/lib/showcase';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -12,18 +12,27 @@ interface ShowcaseCardProps {
   index: number;
 }
 
-export function ShowcaseCard({ item, index }: ShowcaseCardProps) {
+const CARD_INITIAL = { opacity: 0, y: 20 } as const;
+const CARD_ANIMATE = { opacity: 1, y: 0 } as const;
+
+function ShowcaseCardImpl({ item, index }: ShowcaseCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     window.open(item.link, '_blank', 'noopener,noreferrer');
-  };
+  }, [item.link]);
+
+  const handleLoad = useCallback(() => setImageLoaded(true), []);
+  const handleError = useCallback(() => {
+    setImageError(true);
+    setImageLoaded(true);
+  }, []);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={CARD_INITIAL}
+      animate={CARD_ANIMATE}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative overflow-hidden rounded-xl"
     >
@@ -49,11 +58,8 @@ export function ShowcaseCard({ item, index }: ShowcaseCardProps) {
               'overflow-hidden rounded-t-xl object-cover transition-all duration-300 group-hover:scale-105',
               imageLoaded ? 'opacity-100' : 'opacity-0',
             )}
-            onLoad={() => setImageLoaded(true)}
-            onError={() => {
-              setImageError(true);
-              setImageLoaded(true);
-            }}
+            onLoad={handleLoad}
+            onError={handleError}
           />
 
           {/* Fallback for failed images */}
@@ -96,3 +102,5 @@ export function ShowcaseCard({ item, index }: ShowcaseCardProps) {
     </motion.div>
   );
 }
+
+export const ShowcaseCard = memo(ShowcaseCardImpl);

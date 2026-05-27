@@ -140,7 +140,7 @@ export default function Faq3() {
     {
       question: 'Can I use MVPBlocks for commercial projects?',
       answer:
-        'Absolutely! MVPBlocks is free to use for both personal and commercial projects. There are no licensing fees or attribution requirements—just build and launch your MVP faster than ever before.',
+        'Absolutely! MVPBlocks is free to use for both personal and commercial projects. There are no licensing fees or attribution requirements, just build and launch your MVP faster than ever before.',
     },
   ];
 

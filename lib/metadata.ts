@@ -100,5 +100,6 @@ export const baseUrl = siteConfig.url;
 
 export const metadataImage = createMetadataImage({
   imageRoute: "/api/dynamic-og",
+  filename: "image.webp",
   source,
 });

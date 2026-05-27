@@ -11,10 +11,10 @@ export const siteConfig = {
   name: "MVPBlocks",
   url: "https://blocks.mvp-subha.me",
 
-  ogImage: "https://i.postimg.cc/Wz9JFxdW/mvpblocksog.webp",
+  ogImage: "https://blocks.mvp-subha.me/og.webp",
 
   description:
-    "Copy, paste, customize—and launch your idea faster than ever. MVPBlocks is a fully open-source, developer-first component library built using Next.js and TailwindCSS.",
+    "Copy, paste, customize, and launch your idea faster than ever. MVPBlocks is a fully open-source, developer-first component library built using Next.js and TailwindCSS.",
 
   links: {
     twitter: "https://x.com/mvp_Subha",
@@ -78,11 +78,11 @@ export const siteConfig = {
     siteName: "MVPBlocks",
     title: "MVPBlocks",
     description:
-      "Copy, paste, customize—and launch your idea faster than ever. MVPBlocks is a fully open-source, developer-first component library built using Next.js and TailwindCSS.",
+      "Copy, paste, customize, and launch your idea faster than ever. MVPBlocks is a fully open-source, developer-first component library built using Next.js and TailwindCSS.",
     url: "https://blocks.mvp-subha.me",
     images: [
       {
-        url: "https://i.postimg.cc/Wz9JFxdW/mvpblocksog.webp",
+        url: "https://blocks.mvp-subha.me/og.webp",
         width: 1200,
         height: 630,
         alt: "MVPBlocks Open Graph Image",

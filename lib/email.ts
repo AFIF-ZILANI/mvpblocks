@@ -22,7 +22,7 @@ export function generateThankYouEmail({
   const accessButtonLabel = autoDownload ? 'Download Now' : 'Open Project';
   const accessFooter = autoDownload
     ? 'This link will expire in 24 hours. For any questions, contact our support team.'
-    : 'Keep this link safe — it grants access to your project. For any questions, contact our support team.';
+    : 'Keep this link safe. It grants access to your project. For any questions, contact our support team.';
   return `<!DOCTYPE html>
 <html lang="en">
 <head>

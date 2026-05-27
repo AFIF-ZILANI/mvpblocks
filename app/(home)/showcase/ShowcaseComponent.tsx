@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from 'react';
 import { Spotlight } from '@/components/ui/spotlight';
 import { motion } from 'framer-motion';
 import { ExternalLink, Globe } from 'lucide-react';
@@ -7,22 +8,30 @@ import { ShowcaseGrid } from '@/components/showcase/showcase-grid';
 import { geist } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 
-export default function ShowCaseComponent() {
+// Hoisted motion configs (stable identities across renders)
+const FADE_INITIAL = { opacity: 0, y: 20 } as const;
+const FADE_ANIMATE = { opacity: 1, y: 0 } as const;
+const HEADER_TRANSITION = { duration: 0.6 } as const;
+const TITLE_TRANSITION = { duration: 0.6, delay: 0.2 } as const;
+const DESC_TRANSITION = { duration: 0.6, delay: 0.3 } as const;
+const CTA_TRANSITION = { duration: 0.6, delay: 0.4 } as const;
+
+function ShowCaseComponent() {
   return (
     <div className="relative min-h-screen overflow-hidden px-2 py-32 md:px-6">
       <Spotlight />
       <div className="mx-auto max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={FADE_INITIAL}
+          animate={FADE_ANIMATE}
+          transition={HEADER_TRANSITION}
           className="text-center"
         >
           {/* Title */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={FADE_INITIAL}
+            animate={FADE_ANIMATE}
+            transition={TITLE_TRANSITION}
             className={cn(
               'from-foreground via-foreground/90 to-foreground/70 mb-6 bg-gradient-to-b bg-clip-text text-4xl tracking-tight text-transparent sm:text-5xl lg:text-6xl',
               geist.className,
@@ -36,9 +45,9 @@ export default function ShowCaseComponent() {
 
           {/* Description */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            initial={FADE_INITIAL}
+            animate={FADE_ANIMATE}
+            transition={DESC_TRANSITION}
             className="text-muted-foreground mx-auto mb-12 max-w-3xl text-lg sm:text-xl"
           >
             Discover amazing websites and applications built by our community
@@ -48,9 +57,9 @@ export default function ShowCaseComponent() {
 
           {/* CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            initial={FADE_INITIAL}
+            animate={FADE_ANIMATE}
+            transition={CTA_TRANSITION}
             className="mb-16 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
           >
             <a
@@ -71,3 +80,5 @@ export default function ShowCaseComponent() {
     </div>
   );
 }
+
+export default memo(ShowCaseComponent);

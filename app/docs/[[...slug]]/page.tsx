@@ -14,7 +14,14 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { File, Folder, Files } from 'fumadocs-ui/components/files';
 import { type ComponentProps, type FC } from 'react';
-import { EditIcon, AlertCircle, Lightbulb, Heart } from 'lucide-react';
+import {
+  EditIcon,
+  AlertCircle,
+  Lightbulb,
+  Heart,
+  Github,
+  Link as LinkIcon,
+} from 'lucide-react';
 import { AutoTypeTable } from 'fumadocs-typescript/ui';
 import { siteConfig } from '@/config/site';
 import { LLMCopyButton, ViewOptions } from '@/components/important/Actions';
@@ -28,6 +35,17 @@ import {
   articleSchema,
   breadcrumbSchema,
 } from '@/lib/jsonld';
+
+// Only the lucide icons actually referenced as JSX inside content/docs/**/*.mdx.
+// Previously we spread `await import('lucide-react')` (1300+ exports) into the
+// MDX components map on every render — a huge wasted prop-diff for MDX.
+// `Link` is mapped from the lucide `Link` icon to preserve existing behaviour
+// (MDX usages like `<Link prefetch={false} href=...>` were already overridden
+// by the lucide icon under the previous spread).
+const MDX_LUCIDE_COMPONENTS = {
+  Github,
+  Link: LinkIcon,
+} as const;
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -182,7 +200,7 @@ Add any other context or screenshots about the feature request here.`)}`}
           <MDX
             components={{
               ...defaultMdxComponents,
-              ...((await import('lucide-react')) as unknown as MDXComponents),
+              ...(MDX_LUCIDE_COMPONENTS as unknown as MDXComponents),
               Tabs,
               Tab,
               TypeTable,

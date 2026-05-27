@@ -4,7 +4,7 @@ import { ComingSoon } from '@/components/ui/coming-soon';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = createMetadata({
-  title: 'MVPBlocks AI — Smart UI Generation (Coming Soon)',
+  title: 'MVPBlocks AI | Smart UI Generation (Coming Soon)',
   description:
     'MVPBlocks AI brings smart component generation, intelligent code suggestions, auto layout optimization, and AI-powered theming to your workflow. Coming in v4.',
   pathname: '/ai',

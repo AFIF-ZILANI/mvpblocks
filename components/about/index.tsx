@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { geist } from '@/lib/fonts';
@@ -14,15 +15,23 @@ import { Spotlight } from '@/components/ui/spotlight';
 import HowToUse from './how-to-use';
 import Image from 'next/image';
 
-export default function AboutUsComponent() {
+// Hoisted motion configs and inline styles (stable identities)
+const HEADER_INITIAL = { opacity: 0, y: 50 } as const;
+const HEADER_ANIMATE = { opacity: 1, y: 0 } as const;
+const HEADER_TRANSITION = { duration: 0.5, delay: 0 } as const;
+const CARD_SHADOW_STYLE = {
+  boxShadow: 'inset 0 0 30px 1px rgba(244, 63, 94, 0.1)',
+} as const;
+
+function AboutUsComponent() {
   return (
     <div className="bg-background relative min-h-screen w-full overflow-x-hidden px-2 py-32 md:px-6">
       <Spotlight />
       <div className="mx-auto max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0 }}
+          initial={HEADER_INITIAL}
+          animate={HEADER_ANIMATE}
+          transition={HEADER_TRANSITION}
           className="mx-auto max-w-2xl"
         >
           <div className="flex justify-center">
@@ -77,7 +86,7 @@ export default function AboutUsComponent() {
 
         <Card
           className="bg-background relative overflow-hidden p-4 md:p-6"
-          style={{ boxShadow: 'inset 0 0 30px 1px rgba(244, 63, 94, 0.1)' }}
+          style={CARD_SHADOW_STYLE}
         >
           <CardHeader className="mb-6 p-0">
             <h3 className="text-2xl leading-none font-semibold tracking-tight">
@@ -115,3 +124,5 @@ export default function AboutUsComponent() {
     </div>
   );
 }
+
+export default memo(AboutUsComponent);

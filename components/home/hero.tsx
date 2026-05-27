@@ -17,11 +17,46 @@ import Image from 'next/image';
 const PIXEL_SCRIPT_URL =
   'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pixel-RKkUKH2OXWk9adKbDnozmndkwseTQh.js';
 
+const HERO_CARDS = [
+  {
+    title: 'V0 Compatible',
+    description: 'Edit and customize visually, instantly.',
+    icon: <CloudLightning className="h-full w-full" />,
+    variant: 'rose',
+    showGridLines: true,
+  },
+  {
+    title: 'Animated Out of Box',
+    description: 'No setup and smooth UI interactions.',
+    icon: <Sparkles className="h-full w-full" />,
+    variant: 'rose',
+    showGridLines: true,
+  },
+] as const;
+
+const CARD_CONFIGURATIONS = [
+  {
+    color: 'rose',
+    icon: 'Blocks',
+    label: 'Command',
+    canvasProps: { gap: 3, speed: 80, colors: '#fff, #fda4af, #e11d48' },
+    number: 100,
+    desc: 'Components available',
+  },
+  {
+    color: 'rose',
+    icon: 'f',
+    label: 'Dropper',
+    canvasProps: { gap: 3, speed: 80, colors: '#fff, #fda4af, #e11d48' },
+    number: 15,
+    desc: 'Categories available',
+  },
+] as const;
+
 export default function Hero() {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
 
   useEffect(() => {
-    // Use Intersection Observer to load the script only when the component is in view
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -49,42 +84,6 @@ export default function Hero() {
       observer.disconnect();
     };
   }, []);
-
-  const cards = [
-    {
-      title: 'V0 Compatible',
-      description: 'Edit and customize visually, instantly.',
-      icon: <CloudLightning className="h-full w-full" />,
-      variant: 'rose',
-      showGridLines: true,
-    },
-    {
-      title: 'Animated Out of Box',
-      description: 'No setup and  smooth UI interactions.',
-      icon: <Sparkles className="h-full w-full" />,
-      variant: 'rose',
-      showGridLines: true,
-    },
-  ] as const;
-
-  const cardConfigurations = [
-    {
-      color: 'rose',
-      icon: 'Blocks',
-      label: 'Command',
-      canvasProps: { gap: 3, speed: 80, colors: '#fff, #fda4af, #e11d48' },
-      number: 100,
-      desc: 'Components available',
-    },
-    {
-      color: 'rose',
-      icon: 'f',
-      label: 'Dropper',
-      canvasProps: { gap: 3, speed: 80, colors: '#fff, #fda4af, #e11d48' },
-      number: 15,
-      desc: 'Categories available',
-    },
-  ];
 
   return (
     <div
@@ -251,13 +250,13 @@ export default function Hero() {
                 transition={{ duration: 0.75, delay: 0.5 }}
               >
                 <PixelCard
-                  key={cardConfigurations[0].label}
-                  label={cardConfigurations[0].label}
-                  canvasProps={cardConfigurations[0].canvasProps}
-                  number={cardConfigurations[0].number}
-                  icon={cardConfigurations[0].icon}
-                  desc={cardConfigurations[0].desc}
-                  color={cardConfigurations[1].color}
+                  key={CARD_CONFIGURATIONS[0].label}
+                  label={CARD_CONFIGURATIONS[0].label}
+                  canvasProps={CARD_CONFIGURATIONS[0].canvasProps}
+                  number={CARD_CONFIGURATIONS[0].number}
+                  icon={CARD_CONFIGURATIONS[0].icon}
+                  desc={CARD_CONFIGURATIONS[0].desc}
+                  color={CARD_CONFIGURATIONS[1].color}
                 />
               </motion.div>
             )}
@@ -269,17 +268,17 @@ export default function Hero() {
                 transition={{ duration: 0.75, delay: 0.5 }}
               >
                 <PixelCard
-                  color={cardConfigurations[1].color}
-                  icon={cardConfigurations[1].icon}
-                  key={cardConfigurations[1].label}
-                  label={cardConfigurations[1].label}
-                  canvasProps={cardConfigurations[1].canvasProps}
-                  number={cardConfigurations[1].number}
-                  desc={cardConfigurations[1].desc}
+                  color={CARD_CONFIGURATIONS[1].color}
+                  icon={CARD_CONFIGURATIONS[1].icon}
+                  key={CARD_CONFIGURATIONS[1].label}
+                  label={CARD_CONFIGURATIONS[1].label}
+                  canvasProps={CARD_CONFIGURATIONS[1].canvasProps}
+                  number={CARD_CONFIGURATIONS[1].number}
+                  desc={CARD_CONFIGURATIONS[1].desc}
                 />
               </motion.div>
             )}
-            {cards.map((card, i) => (
+            {HERO_CARDS.map((card, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 50 }}

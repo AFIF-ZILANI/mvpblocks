@@ -1,9 +1,14 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { memo, useCallback, useMemo, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { geist } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+
+const MOTION_HIDDEN = { opacity: 0, y: 50 } as const;
+const MOTION_VISIBLE = { opacity: 1, y: 0 } as const;
+const HEADER_TRANSITION = { duration: 0.5, delay: 0 } as const;
+const INVIEW_OPTS = { once: true, amount: 0.3 } as const;
 
 const testimonials = [
   {
@@ -66,11 +71,12 @@ const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
 
-const TestimonialsColumn = (props: {
+const TestimonialsColumn = memo(function TestimonialsColumn(props: {
   className?: string;
   testimonials: typeof testimonials;
   duration?: number;
-}) => (
+}) {
+  return (
   <div className={props.className}>
     <motion.div
       animate={{
@@ -117,29 +123,36 @@ const TestimonialsColumn = (props: {
       ]}
     </motion.div>
   </div>
-);
+  );
+});
 
 const Testimonials = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, INVIEW_OPTS);
 
-  const handleShareClick = () => {
-    const tweets = require('@/lib/tweet-contents').tweetContents;
-    const randomTweet = tweets[Math.floor(Math.random() * tweets.length)];
+  const headerAnimate = useMemo(
+    () => (isInView ? MOTION_VISIBLE : MOTION_HIDDEN),
+    [isInView],
+  );
+
+  const handleShareClick = useCallback(async () => {
+    const { tweetContents } = await import('@/lib/tweet-contents');
+    const randomTweet =
+      tweetContents[Math.floor(Math.random() * tweetContents.length)];
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(randomTweet)}`,
       '_blank',
     );
-  };
+  }, []);
 
   return (
     <section id="reviews" className="bg-background mb-24">
       <div className="mx-auto max-w-7xl">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.5, delay: 0 }}
+          initial={MOTION_HIDDEN}
+          animate={headerAnimate}
+          transition={HEADER_TRANSITION}
           className="mx-auto max-w-[540px]"
         >
           <div className="flex justify-center">

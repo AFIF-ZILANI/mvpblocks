@@ -48,10 +48,10 @@ export default function PrivacyPage() {
           >
             <div className="mb-8 border-b">
               <p className="text-lg leading-relaxed">
-                At MVPBlocks, your privacy is not just respected — it&apos;s
+                At MVPBlocks, your privacy is not just respected: it&apos;s
                 structurally baked into how we work. We don&apos;t track. We
                 don&apos;t snoop. We don&apos;t ask for more than we
-                need—because we don&apos;t need much at all.
+                need, because we don&apos;t need much at all.
               </p>
               <p className="text-lg leading-relaxed">
                 This Privacy Policy explains what limited information we
@@ -189,7 +189,7 @@ export default function PrivacyPage() {
                   </li>
                   <li>
                     We don&apos;t share user data with them unless it&apos;s
-                    essential for platform operation—and even then, no personal
+                    essential for platform operation, and even then, no personal
                     data is shared.
                   </li>
                 </ul>

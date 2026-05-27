@@ -638,9 +638,9 @@ const COMPONENTS_BASE_URL = `${MVPBLOCKS_BASE_URL}/r`;
 
 // CLI args
 const [command, ...args] = process.argv.slice(2);
-const componentNames =
-  command === 'add' ? args.filter((arg) => !arg.startsWith('--')) : [];
-const componentName = componentNames[0]; // For backward compatibility
+const positionalArgs = args.filter((arg) => !arg.startsWith('--'));
+const componentNames = positionalArgs;
+const componentName = positionalArgs[0]; // First positional arg, for any command
 
 const logoLines = [
   '███╗   ███╗██╗   ██╗██████╗ ██████╗ ██╗      ██████╗  ██████╗██╗  ██╗███████╗',
@@ -678,7 +678,7 @@ const gradientLogo = `
    ${createGradientText(logoLines[4], 4, logoLines.length)}   
    ${createGradientText(logoLines[5], 5, logoLines.length)}   
                                                           
-   ${createGradientText('✨ Copy, paste, customize—and launch your idea faster than ever! ✨', 3, 6)}   
+   ${createGradientText('✨ Copy, paste, customize, and launch your idea faster than ever! ✨', 3, 6)}
 
 `;
 
