@@ -22,8 +22,8 @@ import gradient from 'gradient-string';
 import {
   AVAILABLE_COMPONENTS,
   REGISTRY_METADATA,
-  THEME_CONSTANT,
 } from './constants.js';
+import { THEME_CONSTANT } from './theme.js';
 import {
   Zinc,
   Red,
